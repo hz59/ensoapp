@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NewsController!{% endblock %}
+
+{% block body %}
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+        {% for news in lastNews %}
+
+      <div class="col-md-3">
+        <h2> {{ news.title }} </h2>
+        <p class="lead"> {{ news.content | u.truncate(100, '...') }} </p>
+        <p>
+            <span class="text-muted"> 
+            {{ news.createdAt | ago }} - {{ news.user.lastName }} {{ news.user.firstName }} 
+            </span>
+        </p>
+      </div>
+
+      {% endfor %}
+    </div> 
+  </div>
+  <hr />
+
+{% endblock %}

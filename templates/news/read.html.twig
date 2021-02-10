@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Article par {{ news.user.Firstname }}{% endblock %}
+
+{% block body %}
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <h6> {{ news.title }} </h6>
+        <p class="lead"> {{ news.content }} </p>
+        <p>
+            <span class="text-muted"> 
+            {{ news.createdAt | ago }} - {{ news.user.lastName }} {{ news.user.firstName }} 
+            </span>
+        </p>
+      </div>
+
+    </div> 
+  </div>
+  <hr />
+
+{% endblock %}
